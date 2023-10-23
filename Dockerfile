@@ -54,13 +54,13 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     # ros-humble-launch-yaml \
     # ros-humble-launch-testing \
     # ros-humble-launch-testing-ament-cmake \
-    ros-humble-nav2-bringup \
-    ros-humble-nav2-msgs \
-    ros-humble-nav2-mppi-controller \
-    ros-humble-navigation2 \
-    ros-humble-ompl \
-    ros-humble-ros2-control \
-    ros-humble-ros2-controllers \
+    # ros-humble-nav2-bringup \
+    # ros-humble-nav2-msgs \
+    # ros-humble-nav2-mppi-controller \
+    # ros-humble-navigation2 \
+    # ros-humble-ompl \
+    # ros-humble-ros2-control \
+    # ros-humble-ros2-controllers \
     # ros-humble-resource-retriever \
     # ros-humble-rqt-graph \
     # ros-humble-rqt-reconfigure \
@@ -69,7 +69,10 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     # ros-humble-rviz-common \
     # ros-humble-rviz-default-plugins \
     ros-humble-sensor-msgs \
-    ros-humble-slam-toolbox \
+    ros-humble-sick-safetyscanners-base \
+    ros-humble-sick-safetyscanners2 \
+    ros-humble-sick-safetyscanners2-interface \
+    # ros-humble-slam-toolbox \
     # ros-humble-v4l2-camera \
     # ros-humble-vision-opencv \
     # ros-humble-vision-msgs \
