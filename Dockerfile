@@ -96,9 +96,29 @@ RUN apt-get update && apt-get install -y \
 RUN usermod -aG dialout ${USERNAME} 
 
 
+
+RUN mkdir -p /home/sick_ws/src
+RUN cd /home/sick_ws/src     
+WORKDIR /home/sick_ws/src  
+RUN git clone https://github.com/SICKAG/libsick_ldmrs.git
+RUN git clone https://github.com/SICKAG/msgpack11.git
+RUN git clone https://github.com/SICKAG/sick_scan_xd.git
+WORKDIR /home/sick_ws/src/sick_scan_xd/test/scripts
+RUN chmod a+x ./*.bash
+RUN ./makeall_ros2.bash
+WORKDIR /home/sick_ws
+
+WORKDIR /home
+
+# RUN pip install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
+# RUN sudo apt install ros-humble-joint-state-publisher-gui ros-humble-xacro
+# WORKDIR /home/workspaces/rob750/src
+# RUN git clone -b humble https://github.com/Lass6230/spot_ros2.git
+
 # Copy the entrypoint and bashrc scripts so we have 
 # our container's environment set up correctly
 COPY entrypoint.sh /entrypoint.sh
+RUN cd
 COPY bashrc /home/${USERNAME}/.bashrc
 
 
@@ -108,15 +128,7 @@ COPY bashrc /home/${USERNAME}/.bashrc
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
 
-RUN mkdir -p /home/sick_ws/src \      
-          cd /home/sick_ws/src \        
-          git clone https://github.com/SICKAG/libsick_ldmrs.git \
-          git clone https://github.com/SICKAG/msgpack11.git \
-          git clone https://github.com/SICKAG/sick_scan_xd.git \
-          cd /sick_scan_xd \
-          cd test/scripts \ 
-          chmod a+x ./*.bash \
-          ./makeall_ros2.bash \
-          cd
-          # cd \
-          # cd /sick_scan_xd && source install/setup.bash
+WORKDIR /home/sick_scan_xd
+
+
+
