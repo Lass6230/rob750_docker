@@ -9,7 +9,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Example of copying a file
-COPY config/ /site_config/
+# COPY config/ /site_config/
 
 
 # Create a non-root user
@@ -71,13 +71,26 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     ros-humble-sensor-msgs \
     ros-humble-sick-safetyscanners-base \
     ros-humble-sick-safetyscanners2 \
-    ros-humble-sick-safetyscanners2-interface \
+    ros-humble-sick-safetyscanners2-interfaces \
     # ros-humble-slam-toolbox \
     # ros-humble-v4l2-camera \
     # ros-humble-vision-opencv \
     # ros-humble-vision-msgs \
 && rm -rf /var/lib/apt/lists/* \
 && apt-get clean
+
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    zlib1g-dev \
+    libbz2-dev \
+    liblzma-dev \
+    autoconf \
+    git \
+    wget
+
+
+
 
 # Should make you able to talk to serial devices
 RUN usermod -aG dialout ${USERNAME} 
@@ -94,3 +107,16 @@ COPY bashrc /home/${USERNAME}/.bashrc
 # Set up entrypoint and default command
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
+
+RUN mkdir -p /home/sick_ws/src \      
+          cd /home/sick_ws/src \        
+          git clone https://github.com/SICKAG/libsick_ldmrs.git \
+          git clone https://github.com/SICKAG/msgpack11.git \
+          git clone https://github.com/SICKAG/sick_scan_xd.git \
+          cd /sick_scan_xd \
+          cd test/scripts \ 
+          chmod a+x ./*.bash \
+          ./makeall_ros2.bash \
+          cd
+          # cd \
+          # cd /sick_scan_xd && source install/setup.bash
