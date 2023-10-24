@@ -87,10 +87,31 @@ RUN apt-get update && apt-get install -y \
     liblzma-dev \
     autoconf \
     git \
-    wget
+    wget \
+    python3-pip \
+    curl
 
+# RUN apt-get update && apt-get install -y \
+#     wget \
+#     curl \
+#     git \
+#     gdb \
+#     vim \
+#     nano \
+#     python-dev \
+#     python3-pip \
+#     unzip
 
+RUN pip3 install --upgrade pip
+RUN pip install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
 
+RUN apt-get install -y \
+  build-essential \
+  cmake \
+  python3-catkin-pkg-modules \
+  python3-colcon-common-extensions \
+  python3-rosdep \
+  python3-vcstool
 
 # Should make you able to talk to serial devices
 RUN usermod -aG dialout ${USERNAME} 
@@ -118,7 +139,7 @@ WORKDIR /home
 # Copy the entrypoint and bashrc scripts so we have 
 # our container's environment set up correctly
 COPY entrypoint.sh /entrypoint.sh
-RUN cd
+
 COPY bashrc /home/${USERNAME}/.bashrc
 
 
