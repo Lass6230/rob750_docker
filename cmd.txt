@@ -3,6 +3,10 @@ docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-
 docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --device/dev/ttyACM1 --env=DISPLAY -v $PWD/source:/my_source my_image
 
 docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY -v $PWD/source:/workspaces rob750
+
+docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY -v $PWD/source:/home/workspaces rob750
+
+
 docker build -t rob750 .
 
 ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_tim_5xx.launch

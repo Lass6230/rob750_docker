@@ -149,7 +149,7 @@ COPY bashrc /home/${USERNAME}/.bashrc
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
 
-WORKDIR /home/sick_scan_xd
+WORKDIR /home/sick_ws
 
 
 
