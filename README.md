@@ -38,3 +38,5 @@ On spots payload network the spot core have the ip address 192.168.50.5 and lida
 ### 4. connect terminal on your own pc
     sudo ip route add 192.168.50.5 via 192.168.80.3  # think you only have to do this onces
     export ROS_DISCOVERY_SERVER=192.168.80.3:21000
+### 5. run teleop-twist-keyboard
+    ros2 run teleop-twist-keyboard teleop-twist-keyboard
