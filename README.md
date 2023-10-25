@@ -4,7 +4,7 @@ There is an example on launching/running from anorther launch file
 https://github.com/SICKAG/sick_scan_xd/blob/master/FAQ.md#how-to-run-multiple-sensors-concurrently
 
 On spots payload network the spot core have the ip address 192.168.50.5 and lidar 192.168.50.6
-
+## the enviroment variable can be better handle if we can get docker compose on the spot core and a better wifi
 
 ### 1. SSH into SPOT CORE
     ssh -p 20022 spot@192.168.80.3
