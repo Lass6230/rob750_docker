@@ -6,12 +6,19 @@ docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-
 
 docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY -v $PWD/source:/home/workspaces rob750
 
+docker run -it --user ros --network=host --ipc=host --name=ros_fastdds_discovery_server rob750
+
+
+docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY --name=spot_ros2 -v $PWD/source:/home/workspaces rob750
 
 docker build -t rob750 .
 
-ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_tim_5xx.launch
+ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_tim_5xx.launch hostname:=192.168.50.6
 
 d9hQ9uocrJ0F
+
+
+portainer code: (login: admin) (pwd: d9hQ9uocrJ0F)
 
 
 new terminal in docker: docker exec -it <container_name> bash

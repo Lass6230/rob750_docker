@@ -72,6 +72,7 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     ros-humble-sick-safetyscanners-base \
     ros-humble-sick-safetyscanners2 \
     ros-humble-sick-safetyscanners2-interfaces \
+    sudo apt-get install ros-humble-diagnostic-updater \
     # ros-humble-slam-toolbox \
     # ros-humble-v4l2-camera \
     # ros-humble-vision-opencv \
