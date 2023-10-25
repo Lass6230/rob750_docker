@@ -4,7 +4,7 @@ There is an example on launching/running from anorther launch file
 https://github.com/SICKAG/sick_scan_xd/blob/master/FAQ.md#how-to-run-multiple-sensors-concurrently
 
 On spots payload network the spot core have the ip address 192.168.50.5 and lidar 192.168.50.6
-
+## the enviroment variable can be better handle if we can get docker compose on the spot core and a better wifi. think we will need the cmd duration to be higher, have some strange movement some time. maybe we shall se if the lidar works if the get back on the port on the spot core (maybe that will limit the trafic over spots intaernal network)
 
 ### 1. SSH into SPOT CORE
     ssh -p 20022 spot@192.168.80.3
@@ -42,3 +42,5 @@ On spots payload network the spot core have the ip address 192.168.50.5 and lida
 ### 4. connect terminal on your own pc
     sudo ip route add 192.168.50.5 via 192.168.80.3  # think you only have to do this onces
     export ROS_DISCOVERY_SERVER=192.168.80.3:21000
+### 5. run teleop-twist-keyboard
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard
