@@ -9,7 +9,7 @@ On spots payload network the spot core have the ip address 192.168.50.5 and lida
 ### 1. SSH into SPOT CORE
     ssh -p 20022 spot@192.168.80.3
 
-### 2. Run docker images to be able to see topic on your laptop (some ros2 cli do not work ex. ros2 topic list)
+### 2. Run docker images to be able to see topic on your laptop (some ros2 cli do not work ex. ros2 topic list) --name=ros_fastdds_discovery_server not sure if it can be called when a cotainer allready have been run with that name
     docker run -it --user ros --network=host --ipc=host --name=ros_fastdds_discovery_server rob750
 
     fastdds discovery -i 0 -p 21000
@@ -29,6 +29,10 @@ On spots payload network the spot core have the ip address 192.168.50.5 and lida
     ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_tim_5xx.launch hostname:=192.168.50.6
     ### ###
 
+    ### new terminal in docker ###
+    docker exec -it <container_name> bash
+    ### ###
+    
     ### spot driver ###
     cd /home/workspaces/rob7_750
     . install/setup.bash
