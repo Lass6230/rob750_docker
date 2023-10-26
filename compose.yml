@@ -1,16 +1,16 @@
 version: "3.5"
 services:
-  ros_fastdds_discovery_server:
-    image: rob750:latest
-    network_mode: host
-    ipc: host
-    restart: unless-stopped
-    # Launch the FastDDS discovery sever to bypass the need of multicast to discover nodes
-    volumes:
-      # Mount payload credentials.
-      # - /opt/payload_credentials/payload_guid_and_secret:/opt/payload_credentials/payload_guid_and_secret
-      - ./source:/home/workspaces
-    command: fastdds discovery -i 0 -p 21000
+  # ros_fastdds_discovery_server:
+  #   image: rob750:latest
+  #   network_mode: host
+  #   ipc: host
+  #   restart: unless-stopped
+  #   # Launch the FastDDS discovery sever to bypass the need of multicast to discover nodes
+  #   volumes:
+  #     # Mount payload credentials.
+  #     # - /opt/payload_credentials/payload_guid_and_secret:/opt/payload_credentials/payload_guid_and_secret
+  #     - ./source:/home/workspaces
+  #   command: fastdds discovery -i 0 -p 21000
   spot_ros2:
     image: rob750:latest
     network_mode: host
@@ -21,12 +21,12 @@ services:
       # Mount payload credentials.
       # - /opt/payload_credentials/payload_guid_and_secret:/opt/payload_credentials/payload_guid_and_secret
       - ./source:/home/workspaces
-    environment:
-      # - SPOT_IP=192.168.50.3   
-      - ROS_DOMAIN_ID=56       
-      - ROS_DISCOVERY_SERVER=192.168.80.3:21000   
-      # - PAYLOAD_CREDENTIALS=/opt/payload_credentials/payload_guid_and_secret
-    # Launch the Spot ROS 2 driver 
+    # environment:
+    #   # - SPOT_IP=192.168.50.3   
+    #   - ROS_DOMAIN_ID=56       
+    #   - ROS_DISCOVERY_SERVER=192.168.80.3:21000   
+    #   # - PAYLOAD_CREDENTIALS=/opt/payload_credentials/payload_guid_and_secret
+    # # Launch the Spot ROS 2 driver 
     
 
     command: ros2 launch spot_rob750 spot_launch.py
@@ -39,12 +39,12 @@ services:
     ipc: host
     restart: unless-stopped
     
-    environment:
-      # - SPOT_IP=192.168.50.3   
-      - ROS_DOMAIN_ID=56       
-      - ROS_DISCOVERY_SERVER=192.168.80.3:21000   
-      # - PAYLOAD_CREDENTIALS=/opt/payload_credentials/payload_guid_and_secret
-    # Launch the Spot ROS 2 driver 
+    # environment:
+    #   # - SPOT_IP=192.168.50.3   
+    #   - ROS_DOMAIN_ID=56       
+    #   - ROS_DISCOVERY_SERVER=192.168.80.3:21000   
+    #   # - PAYLOAD_CREDENTIALS=/opt/payload_credentials/payload_guid_and_secret
+    # # Launch the Spot ROS 2 driver 
     volumes:
       # Mount payload credentials.
       # - /opt/payload_credentials/payload_guid_and_secret:/opt/payload_credentials/payload_guid_and_secret
