@@ -44,3 +44,9 @@ On spots payload network the spot core have the ip address 192.168.50.5 and lida
     export ROS_DISCOVERY_SERVER=192.168.80.3:21000
 ### 5. run teleop-twist-keyboard
     ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+
+## VNC ip 192.168.80.3:21000
+    Install real vnc viewer
+    password: "passwaord"
+
