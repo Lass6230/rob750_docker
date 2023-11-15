@@ -50,30 +50,31 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     # ros-humble-image-pipeline \
     # ros-humble-image-transport \
     # ros-humble-image-transport-plugins \
-    # ros-humble-launch-xml \
-    # ros-humble-launch-yaml \
+    ros-humble-launch-xml \
+    ros-humble-launch-yaml \
     # ros-humble-launch-testing \
     # ros-humble-launch-testing-ament-cmake \
-    # ros-humble-nav2-bringup \
-    # ros-humble-nav2-msgs \
-    # ros-humble-nav2-mppi-controller \
-    # ros-humble-navigation2 \
-    # ros-humble-ompl \
+    ros-humble-nav2-bringup \
+    ros-humble-nav2-msgs \
+    ros-humble-nav2-mppi-controller \
+    ros-humble-navigation2 \
+    ros-humble-ompl \
     # ros-humble-ros2-control \
     # ros-humble-ros2-controllers \
     # ros-humble-resource-retriever \
-    # ros-humble-rqt-graph \
-    # ros-humble-rqt-reconfigure \
-    # ros-humble-rqt-image-view \
-    # ros-humble-rviz2 \
-    # ros-humble-rviz-common \
-    # ros-humble-rviz-default-plugins \
+    ros-humble-rqt-graph \
+    ros-humble-rqt-reconfigure \
+    ros-humble-rqt-image-view \
+    ros-humble-rviz2 \
+    ros-humble-rviz-common \
+    ros-humble-rviz-default-plugins \
     ros-humble-sensor-msgs \
     ros-humble-sick-safetyscanners-base \
     ros-humble-sick-safetyscanners2 \
     ros-humble-sick-safetyscanners2-interfaces \
     ros-humble-diagnostic-updater \
-    # ros-humble-slam-toolbox \
+    ros-humble-slam-toolbox \
+    ros-humble-tf-transformations \
     # ros-humble-v4l2-camera \
     # ros-humble-vision-opencv \
     # ros-humble-vision-msgs \
@@ -105,7 +106,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install --upgrade pip
 RUN pip install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
-RUN pip3 pip3 install transforms3d
+RUN pip install transforms3d
 RUN pip install cvxopt
 RUN pip install networks
 

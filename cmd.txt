@@ -10,6 +10,7 @@ docker run -it --user ros --network=host --ipc=host --name=ros_fastdds_discovery
 
 
 docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY --name=spot_ros2 -v $PWD/source:/home/workspaces rob750
+docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY -v $PWD/source:/home/workspaces rob750
 
 docker build -t rob750 .
 
