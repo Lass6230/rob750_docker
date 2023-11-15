@@ -105,6 +105,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install --upgrade pip
 RUN pip install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
+RUN pip3 pip3 install transforms3d
+RUN pip install cvxopt
+RUN pip install networks
+
 
 RUN apt-get install -y \
   build-essential \
