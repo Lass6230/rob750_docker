@@ -18,7 +18,7 @@ ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_tim_5xx
 
 d9hQ9uocrJ0F
 
-scan topic: sick_tim_5xx/scan
+scan topic: /sick_tim_5xx/scan
 
 portainer code: (login: admin) (pwd: d9hQ9uocrJ0F)
 
