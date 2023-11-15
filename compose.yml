@@ -1,16 +1,16 @@
 version: "3.5"
 services:
-  ros_fastdds_discovery_server:
-    image: rob750:latest
-    network_mode: host
-    ipc: host
-    restart: unless-stopped
-    # Launch the FastDDS discovery sever to bypass the need of multicast to discover nodes
-    volumes:
-      # Mount payload credentials.
-      # - /opt/payload_credentials/payload_guid_and_secret:/opt/payload_credentials/payload_guid_and_secret
-      - ./source:/home/workspaces
-    command: fastdds discovery -i 0 -p 21000
+  # ros_fastdds_discovery_server:
+  #   image: rob750:latest
+  #   network_mode: host
+  #   ipc: host
+  #   restart: unless-stopped
+  #   # Launch the FastDDS discovery sever to bypass the need of multicast to discover nodes
+  #   volumes:
+  #     # Mount payload credentials.
+  #     # - /opt/payload_credentials/payload_guid_and_secret:/opt/payload_credentials/payload_guid_and_secret
+  #     - ./source:/home/workspaces
+  #   command: fastdds discovery -i 0 -p 21000
   spot_ros2:
     image: rob750:latest
     network_mode: host
