@@ -104,11 +104,7 @@ RUN apt-get update && apt-get install -y \
 #     python3-pip \
 #     unzip
 
-RUN pip3 install --upgrade pip
-RUN pip install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
-RUN pip install transforms3d
-RUN pip install cvxopt
-RUN pip install networks
+
 
 
 RUN apt-get install -y \
@@ -136,6 +132,13 @@ RUN ./makeall_ros2.bash
 WORKDIR /home/sick_ws
 
 WORKDIR /home
+
+RUN pip3 install --upgrade pip
+RUN pip install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
+RUN pip install transforms3d
+RUN pip install cvxopt
+RUN pip install networkx
+RUN pip install numdifftools
 
 # RUN pip install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
 # RUN sudo apt install ros-humble-joint-state-publisher-gui ros-humble-xacro
