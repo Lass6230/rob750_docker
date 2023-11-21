@@ -151,7 +151,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 COPY bashrc /home/${USERNAME}/.bashrc
 
-
+RUN sudo apt install weboots
 
 
 # Set up entrypoint and default command
