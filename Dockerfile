@@ -120,16 +120,16 @@ RUN usermod -aG dialout ${USERNAME}
 
 
 
-RUN mkdir -p /home/sick_ws/src
-RUN cd /home/sick_ws/src     
-WORKDIR /home/sick_ws/src  
-RUN git clone https://github.com/SICKAG/libsick_ldmrs.git
-RUN git clone https://github.com/SICKAG/msgpack11.git
-RUN git clone https://github.com/SICKAG/sick_scan_xd.git
-WORKDIR /home/sick_ws/src/sick_scan_xd/test/scripts
-RUN chmod a+x ./*.bash
-RUN ./makeall_ros2.bash
-WORKDIR /home/sick_ws
+# RUN mkdir -p /home/sick_ws/src
+# RUN cd /home/sick_ws/src     
+# WORKDIR /home/sick_ws/src  
+# RUN git clone https://github.com/SICKAG/libsick_ldmrs.git
+# RUN git clone https://github.com/SICKAG/msgpack11.git
+# RUN git clone https://github.com/SICKAG/sick_scan_xd.git
+# WORKDIR /home/sick_ws/src/sick_scan_xd/test/scripts
+# RUN chmod a+x ./*.bash
+# RUN ./makeall_ros2.bash
+# WORKDIR /home/sick_ws
 
 WORKDIR /home
 
@@ -158,7 +158,7 @@ RUN sudo apt install weboots
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
 
-WORKDIR /home/sick_ws
+WORKDIR /home/
 
 
 
