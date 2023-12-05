@@ -58,6 +58,7 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     ros-humble-nav2-msgs \
     ros-humble-nav2-mppi-controller \
     ros-humble-navigation2 \
+    ros-humble-velodyne \
     ros-humble-ompl \
     # ros-humble-ros2-control \
     # ros-humble-ros2-controllers \
