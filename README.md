@@ -45,6 +45,9 @@ On spots payload network the spot core have the ip address 192.168.50.5 and lida
 ### 5. run teleop-twist-keyboard
     ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
+### 6. run velodyne lidar
+    ros2 launch velodyne velodyne-all-nodes-VLP16-launch.py
+    
 
 ## VNC ip 192.168.80.3:21000
     Install real vnc viewer
