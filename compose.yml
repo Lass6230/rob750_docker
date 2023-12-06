@@ -30,8 +30,8 @@ services:
     
 
     command: ros2 launch spot_rob750 spot_launch.py
-    depends_on:
-      - ros_fastdds_discovery_server
+    # depends_on:
+    #   - ros_fastdds_discovery_server
   
   lidar_ros2:
     image: rob750:latest
@@ -51,5 +51,5 @@ services:
       - ./source:/home/workspaces
 
     command: ros2 launch velodyne velodyne-all-nodes-VLP16-launch.py #ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_tim_5xx.launch hostname:=192.168.50.6
-    depends_on:
-      - ros_fastdds_discovery_server
+    # depends_on:
+    #   - ros_fastdds_discovery_server
