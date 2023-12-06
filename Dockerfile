@@ -60,6 +60,7 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     ros-humble-navigation2 \
     ros-humble-velodyne \
     ros-humble-ompl \
+    ros-humble-velodyne \
     # ros-humble-ros2-control \
     # ros-humble-ros2-controllers \
     # ros-humble-resource-retriever \
@@ -121,16 +122,16 @@ RUN usermod -aG dialout ${USERNAME}
 
 
 
-RUN mkdir -p /home/sick_ws/src
-RUN cd /home/sick_ws/src     
-WORKDIR /home/sick_ws/src  
-RUN git clone https://github.com/SICKAG/libsick_ldmrs.git
-RUN git clone https://github.com/SICKAG/msgpack11.git
-RUN git clone https://github.com/SICKAG/sick_scan_xd.git
-WORKDIR /home/sick_ws/src/sick_scan_xd/test/scripts
-RUN chmod a+x ./*.bash
-RUN ./makeall_ros2.bash
-WORKDIR /home/sick_ws
+# RUN mkdir -p /home/sick_ws/src
+# RUN cd /home/sick_ws/src     
+# WORKDIR /home/sick_ws/src  
+# RUN git clone https://github.com/SICKAG/libsick_ldmrs.git
+# RUN git clone https://github.com/SICKAG/msgpack11.git
+# RUN git clone https://github.com/SICKAG/sick_scan_xd.git
+# WORKDIR /home/sick_ws/src/sick_scan_xd/test/scripts
+# RUN chmod a+x ./*.bash
+# RUN ./makeall_ros2.bash
+# WORKDIR /home/sick_ws
 
 WORKDIR /home
 
@@ -159,7 +160,7 @@ COPY bashrc /home/${USERNAME}/.bashrc
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
 
-WORKDIR /home/sick_ws
+WORKDIR /home
 
 
 
