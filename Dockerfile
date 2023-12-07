@@ -50,6 +50,7 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     # ros-humble-image-pipeline \
     # ros-humble-image-transport \
     # ros-humble-image-transport-plugins \
+    ros-humble-moveit \
     ros-humble-launch-xml \
     ros-humble-launch-yaml \
     # ros-humble-launch-testing \
