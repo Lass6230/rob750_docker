@@ -26,3 +26,6 @@ portainer code: (login: admin) (pwd: d9hQ9uocrJ0F)
 new terminal in docker: docker exec -it <container_name> bash
 
 ssh -p 20022 spot@192.168.80.3
+
+
+docker for arm64:  https://hub.docker.com/r/arm64v8/ros/tags?page=1&name=humble
